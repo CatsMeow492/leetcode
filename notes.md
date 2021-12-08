@@ -19,6 +19,9 @@
 2. Traverse left
 3. Traverse right
 
+Visit and Output F -> Visit and Output B -> Visit and Output A -> null -> null -> Return to B -> Visit and Output D
+![Pre Order](preorder.png)
+
 ***Psuedocode***
 
 preorder(node)
@@ -64,3 +67,41 @@ O(n)
 
 F -> B -> A -> null -> null -> Return and Output A -> Return to B -> D -> C -> null -> null -> Return and Output C
 ![Post Order](postorder.png)
+
+***Pseudocode***
+
+postorder(node)
+    if node == null then return
+    postorder(node.left)
+    postorder(node.right)
+    visit(node)
+
+***Time Complexity***
+
+O(n)
+
+> Where n is the number of nodes
+
+## Level-order tree traversal  // Return to this and fix notes later
+
+***Psuedocode***
+
+levelorder(root)
+    q <- empty queue
+    q.enqueue(root)
+    while (not q.isEmpty())
+        node <- q.dequeue()
+        visit(node)
+        if (node.left != null)
+            q.enqueue(node.left)
+        if (node.right != null)
+            q.enqueue(node.right)
+
+***Time Complexity***
+
+O(n)
+
+> Where n is the number of nodes
+
+Output:                                     Queue:
+
